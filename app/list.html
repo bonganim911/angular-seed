@@ -1,0 +1,27 @@
+<div><a href="#/add_customer">Add a customer</a></div>
+<table>
+	<tr>
+		<td><strong>Name:</strong></td>
+		<td><strong>Contact Number:</strong></td>
+		<td><strong>Car Information:</strong></td>
+		<td><strong>Service Information:</strong></td>
+	</tr>
+	<tr ng-repeat="car_detail in car_information">
+		<span>{{car_detail.id}}</span>
+		<td> {{car_detail.name}}</td>
+		<td> {{car_detail.phone_number}}</td>
+		<td>
+			<tr>
+				<th>Type</th>
+				<th>Registration Number</th>
+				<th>Kms</th>
+			</tr>
+			<tr>
+				<td>{{car_detail.car_details.car_type}}</td>
+				<td>{{car_detail.car_details.car_registration}}</td>
+				<td>{{car_detail.car_details.kms}}</td>
+			</tr>
+		</td>
+		<td><a href="#/service/{{car_detail.id}}">Click here for service details</a></td>
+	</tr>
+</table>

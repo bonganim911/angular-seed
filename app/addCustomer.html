@@ -1,0 +1,24 @@
+<h3>Add Customer</h3>
+<form name='addCustomerForm' ng-controller="AddCustomerController">
+<div ng-show='message'>{{message}}</div>
+<div>First name: <input name='firstName' ng-model='customer.first' required></div>
+<div>Last name: <input ng-model='customer.last' required></div>
+<div>Phone Number: <input type='number' ng-model='customer.phone_number' ng-maxlength='10' required></div>
+<div><h4>Car Information:</h4> 
+	<div> Car Model: <input type='text'
+							ng-model='car_type' 
+							required>
+	</div>
+	<div> Car Registration: <input type='text'
+							ng-model='car_registration' 
+							required>
+	</div>
+	<div> Car KMs: <input type='number'
+							ng-model='car_kms'>
+	</div>
+</div>
+<div>
+	<button ng-click='addCustomer()'
+			ng-disabled='!addCustomerForm.$valid'>Add Customer</button>
+	<button><a href="#/">Back to Customers</a></button>
+</ng-form>
